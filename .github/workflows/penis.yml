@@ -1,0 +1,35 @@
+name: penis
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pytest
+
+    - name: Run tests
+      run: |
+        pytest lab_8-9/lab-5/test_one.py
+        pytest lab_8-9/lab-5/test_two.py
+        pytest lab_8-9/lab-5/test_three.py
+        pytest lab_8-9/lab-5/test_four.py
+        pytest lab_8-9/lab-6/test.py
+        pytest lab_8-9/lab-7/test_second.py
+        pytest lab_8-9/lab-7/test_third.py
+        pytest lab_8-9/lab-7/test_fourth.py
+
+    - name: Fail on test failure
+      if: ${{ failure() }}
+      run: exit 1
