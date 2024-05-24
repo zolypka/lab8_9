@@ -21,14 +21,14 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest lab_8-9/lab-5/test_one.py
-        pytest lab_8-9/lab-5/test_two.py
-        pytest lab_8-9/lab-5/test_three.py
-        pytest lab_8-9/lab-5/test_four.py
-        pytest lab_8-9/lab-6/test.py
-        pytest lab_8-9/lab-7/test_second.py
-        pytest lab_8-9/lab-7/test_third.py
-        pytest lab_8-9/lab-7/test_fourth.py
+        pytest lab-5/test_one.py
+        pytest lab-5/test_two.py
+        pytest lab-5/test_three.py
+        pytest lab-5/test_four.py
+        pytest lab-6/test.py
+        pytest lab-7/test_second.py
+        pytest lab-7/test_third.py
+        pytest lab-7/test_fourth.py
 
     - name: Fail on test failure
       if: ${{ failure() }}
