@@ -29,7 +29,3 @@ jobs:
         pytest lab-7/test_second.py
         pytest lab-7/test_third.py
         pytest lab-7/test_fourth.py
-
-    - name: Fail on test failure
-      if: ${{ failure() }}
-      run: exit 1
