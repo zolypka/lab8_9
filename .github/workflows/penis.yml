@@ -1,4 +1,4 @@
-name: penis
+name: tests
 
 on: [push, pull_request]
 
